@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f4f1ea"><title>Orbit — AI workspace</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="shell">
+    <aside>
+      <a class="brand" href="#"><span class="mark">O</span><span>ORBIT</span></a>
+      <button class="new" id="newChat">＋ <span>New conversation</span><kbd>⌘ K</kbd></button>
+      <nav><p>Recent</p><button class="active">Product launch ideas</button><button>Explain Kubernetes</button><button>Writing assistant</button></nav>
+      <div class="aside-foot"><div class="mini-orbit"></div><p><strong>Built to think with you.</strong><br><span>Your AI workspace, always ready.</span></p></div>
+    </aside>
+    <main>
+      <header><button class="mobile" id="menu">☰</button><span class="status"><i></i> AI online</span><button class="ghost" id="clear">Clear chat</button></header>
+      <section class="chat" id="chat">
+        <div class="hero" id="hero"><div class="sun">✦</div><p class="eyebrow">YOUR AI COLLABORATOR</p><h1>What can we<br><em>explore</em> together?</h1><p>Ask a question, shape an idea, or make something useful.</p>
+          <div class="suggestions"><button data-prompt="Help me plan a focused, productive week">Plan my week <span>↗</span></button><button data-prompt="Explain Kubernetes to me with a simple analogy">Explain a concept <span>↗</span></button><button data-prompt="Brainstorm five unusual product launch ideas">Brainstorm ideas <span>↗</span></button></div>
+        </div>
+        <div class="messages" id="messages" aria-live="polite"></div>
+      </section>
+      <form id="form"><div class="composer"><textarea id="prompt" rows="1" placeholder="Message Orbit..." maxlength="8000" required></textarea><button class="send" aria-label="Send">↑</button></div><small>Orbit can make mistakes. Check important information.</small></form>
+    </main>
+  </div>
+  <script src="/app.js" type="module"></script>
+</body></html>

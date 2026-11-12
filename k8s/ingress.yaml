@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: orbit-ai
+spec:
+  rules:
+    - host: orbit.192.168.11.247.nip.io
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service: { name: orbit-ai, port: { number: 80 } }
+    # Host-less rule: lets http://192.168.11.247 work without any DNS
+    # (the router blocks nip.io answers that point at private IPs).
+    - http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service: { name: orbit-ai, port: { number: 80 } }
